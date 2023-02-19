@@ -1,0 +1,3 @@
+# Ignore specific warning messages
+**/*:
+  warning "resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated"

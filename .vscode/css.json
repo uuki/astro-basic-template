@@ -1,0 +1,48 @@
+{
+  "version": 1.1,
+  "properties": [],
+  "atDirectives": [
+    {
+      "name": "@custom-media",
+      "description": "PostCSS Custom Media lets you define @custom-media in CSS following the Custom Media Specification.",
+      "references": [
+        {
+          "name": "postcss-custom-media",
+          "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media"
+        }
+      ]
+    },
+    {
+      "name": "@tailwind",
+      "description": "A utility-first CSS framework for rapid UI development.",
+      "references": [
+        {
+          "name": "tailwindcss",
+          "url": "https://tailwindcss.com/"
+        }
+      ]
+    },
+    {
+      "name": "@apply",
+      "description": "Extracting classes with @apply",
+      "references": [
+        {
+          "name": "@apply",
+          "url": "https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply"
+        }
+      ]
+    },
+    {
+      "name": "@layer",
+      "description": "The @layer rule declares a cascade layer, with the option to assign style rules.",
+      "references": [
+        {
+          "name": "at-layer",
+          "url": "https://www.w3.org/TR/css-cascade-5/#at-layer"
+        }
+      ]
+    }
+  ],
+  "pseudoClasses": [],
+  "pseudoElements": []
+}

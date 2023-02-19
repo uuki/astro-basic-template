@@ -1,0 +1,52 @@
+---
+import '@/styles/style.scss';
+import config from '@/data/meta.yml'
+
+export interface Meta {
+  title: string
+  description: string
+  'og:title': string
+  'og:description': string
+  'og:image': string
+}
+
+export interface Props {
+  meta?: Partial<Meta>
+}
+
+const props = Astro.props;
+
+const meta: Readonly<Meta> = {
+  ...config.meta,
+  ...props.meta,
+}
+
+const formats = {
+  title: [meta.title, config.siteName].filter(Boolean).join(' - ')
+}
+const origin = import.meta.env.PUBLIC_ORIGIN || Astro.url.origin
+const url = `${origin}${Astro.url.pathname}`
+---
+
+<!DOCTYPE html>
+<html lang={config.lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{formats.title}</title>
+    <meta name="description" content={meta.description}>
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={formats.title} />
+    {meta['og:image'] && (<meta property="og:image" content={origin + meta['og:image']} />)}
+    <meta property="og:description" content={meta.description} />
+    <script>
+      import '@/js/app'
+    </script>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
