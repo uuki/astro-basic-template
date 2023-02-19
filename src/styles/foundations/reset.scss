@@ -1,0 +1,57 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(body, p, h1, h2, h3, h4, h5, h6, figure, dl, dd, ol, ul, li, fieldset, legend, hr) {
+  margin: 0;
+}
+
+:where(dl, dd, ol, ul, li, fieldset, legend, button) {
+  padding: 0;
+}
+
+:where(ol, ul, li) {
+  list-style: none;
+}
+
+:where(input, select) {
+  vertical-align: middle;
+  border-radius: 0;
+}
+
+:where(img) {
+  vertical-align: top;
+}
+
+:where(fieldset, hr, button) {
+  border: 0;
+}
+
+:where(fieldset) {
+  min-width: 0;
+}
+
+:where(svg, legend) {
+  display: block;
+}
+
+:where(blockquote) {
+  margin: auto;
+}
+
+:where(button) {
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+:where(a) {
+  text-decoration: none;
+  color: inherit;
+}
