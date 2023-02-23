@@ -17,7 +17,7 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
   - autoprefixer
 - TypeScript
 - Svelte@3
-- eslint
+- minimal setuped linters (eslint, stylelint)
 - pretteir
 - husky
 
