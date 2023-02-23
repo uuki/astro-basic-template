@@ -1,5 +1,6 @@
 module.exports = {
-  '*.{js,jsx,ts,tsx}': ['eslint --fix', 'eslint'],
+  '*.{js,ts}': ['eslint', 'eslint --fix'],
+  '**/*.scss': () => ['stylelint', 'stylelint --fix'],
+  '*.{astro,js,ts,json}': ['prettier --write'],
   '**/*.ts?(x)': () => 'npm run build-types',
-  '*.json': ['prettier --write'],
-}
+};
