@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 import image from '@astrojs/image';
 import compress from 'astro-compress';
 import yaml from '@rollup/plugin-yaml';
+import commonjs from '@rollup/plugin-commonjs';
 import globImporter from 'node-sass-glob-importer';
 import postcssCustomMedia from 'postcss-custom-media';
 import postcssPresetEnv from 'postcss-preset-env';
@@ -62,7 +63,7 @@ export default defineConfig({
         ],
       },
     },
-    plugins: [yaml()],
+    plugins: [commonjs(), yaml()],
     resolve: {
       alias: {
         [CONSTANTS.aliasPrefix.root]: path.resolve(__dirname, './'),
