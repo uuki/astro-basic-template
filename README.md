@@ -10,13 +10,13 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 
 ## ✨ Features
 
-- Astro@2
+- Astro@4
 - CSS (Sass + PostCSS Plugins)
   - glob import
   - custom media
   - autoprefixer
 - TypeScript
-- Svelte@3
+- Svelte@4
 - minimal setuped linters (eslint, stylelint)
 - pretteir
 - husky
@@ -26,7 +26,7 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 | Command                | Action                                             |
 | :--------------------- | :------------------------------------------------- |
 | `yarn install`         | Installs dependencies                              |
-| `yarn dev`             | Starts local dev server at `localhost:3000`        |
+| `yarn dev`             | Starts local dev server at `http://localhost:4321` |
 | `yarn build`           | Build your production site to `./dist/`            |
 | `yarn preview`         | Preview your build locally, before deploying       |
 | `yarn astro ...`       | Run CLI commands like `astro add`, `astro preview` |
