@@ -1,7 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'astro/config';
-import image from '@astrojs/image';
 import compress from 'astro-compress';
 import yaml from '@rollup/plugin-yaml';
 import commonjs from '@rollup/plugin-commonjs';
@@ -10,16 +9,7 @@ import postcssCustomMedia from 'postcss-custom-media';
 import postcssPresetEnv from 'postcss-preset-env';
 import svelte from '@astrojs/svelte';
 
-import { createRequire } from 'module';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-export const CONSTANTS = {
-  aliasPrefix: {
-    root: '~',
-    src: '@',
-    types: '#',
-  },
-};
 
 /**
  * @docs https://astro.build/config
@@ -27,7 +17,6 @@ export const CONSTANTS = {
 export default defineConfig({
   integrations: [
     svelte(),
-    image(),
     compress({
       path: ['./dist'],
       css: true,
@@ -66,13 +55,10 @@ export default defineConfig({
     plugins: [commonjs(), yaml()],
     resolve: {
       alias: {
-        [CONSTANTS.aliasPrefix.root]: path.resolve(__dirname, './'),
-        [CONSTANTS.aliasPrefix.src]: path.resolve(__dirname, './src'),
-        [CONSTANTS.aliasPrefix.types]: path.resolve(__dirname, './src/types'),
+        '~': path.resolve(__dirname, './'),
+        '@': path.resolve(__dirname, './src'),
+        '#': path.resolve(__dirname, './src/types'),
       },
-    },
-    define: {
-      require: createRequire(import.meta.url),
     },
   },
 });
