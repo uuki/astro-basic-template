@@ -1,6 +1,6 @@
 {
   "name": "astro-basic-template",
-  "version": "1.0.2",
+  "version": "1.2.2",
   "license": "MIT",
   "private": true,
   "author": "uuki <uuki.dev@gmail.com>",
@@ -12,11 +12,12 @@
     "clean": "rimraf dist",
     "lint:es": "eslint --cache 'src/**/*.{astro,js,ts,json}'",
     "lint:style": "stylelint 'src/**/*.scss'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "plop": "npx plop component"
   },
   "dependencies": {
     "@astrojs/svelte": "^5.0.3",
-    "astro": "4.1.2",
+    "astro": "4.15.9",
     "svelte": "^4.2.12"
   },
   "devDependencies": {
@@ -32,7 +33,6 @@
     "eslint-plugin-svelte": "^2.35.1",
     "husky": "8.0.2",
     "lint-staged": "13.0.3",
-    "node-sass-glob-importer": "^5.3.2",
     "postcss": "^8.4.20",
     "postcss-custom-media": "^9.0.1",
     "postcss-preset-env": "^7.8.3",
@@ -41,6 +41,7 @@
     "sass": "^1.57.1",
     "stylelint": "14.16.1",
     "stylelint-config-html": "1.1.0",
-    "stylelint-scss": "4.4.0"
+    "stylelint-scss": "4.4.0",
+    "vite-plugin-sass-glob-import": "^4.0.0"
   }
 }

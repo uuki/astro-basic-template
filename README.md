@@ -25,12 +25,12 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 
 | Command                | Action                                             |
 | :--------------------- | :------------------------------------------------- |
-| `yarn install`         | Installs dependencies                              |
-| `yarn dev`             | Starts local dev server at `http://localhost:4321` |
-| `yarn build`           | Build your production site to `./dist/`            |
-| `yarn preview`         | Preview your build locally, before deploying       |
-| `yarn astro ...`       | Run CLI commands like `astro add`, `astro preview` |
-| `yarn astro --help`    | Get help using the Astro CLI                       |
+| `pnpm install`         | Installs dependencies                              |
+| `pnpm dev`             | Starts local dev server at `http://localhost:4321` |
+| `pnpm build`           | Build your production site to `./dist/`            |
+| `pnpm preview`         | Preview your build locally, before deploying       |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro preview` |
+| `pnpm astro --help`    | Get help using the Astro CLI                       |
 
 ## 🚀 Project Structure
 

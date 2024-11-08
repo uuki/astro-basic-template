@@ -16,9 +16,9 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom", "dom.iterable"],
-    "types": ["@astrojs/image/client"]
+    "types": []
   },
   "extends": "astro/tsconfigs/strict",
-  "exclude": ["node_modules"],
-  "include": ["utils/**/*.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/*.svelte"]
+  "include": ["utils/**/*.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/*.svelte"],
+  "exclude": ["node_modules"]
 }

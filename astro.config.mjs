@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 import compress from 'astro-compress';
 import yaml from '@rollup/plugin-yaml';
 import commonjs from '@rollup/plugin-commonjs';
-import globImporter from 'node-sass-glob-importer';
+import sassGlobImports from 'vite-plugin-sass-glob-import';
 import postcssCustomMedia from 'postcss-custom-media';
 import postcssPresetEnv from 'postcss-preset-env';
 import svelte from '@astrojs/svelte';
@@ -15,6 +15,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
  * @docs https://astro.build/config
  */
 export default defineConfig({
+  devToolbar: {
+    enabled: false
+  },
   integrations: [
     svelte(),
     compress({
@@ -23,18 +26,18 @@ export default defineConfig({
       html: false,
       img: false,
       js: false,
-      svg: false,
-    }),
+      svg: false
+    })
   ],
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
+          api: 'modern-compiler',
           charset: false,
-          importer: globImporter(),
           // Global addition styles
-          additionalData: [`@use "sass:math";`, `@import '@/styles/foundations/custom-media.scss';`].join('\n'),
-        },
+          additionalData: [`@use "sass:math";`].join('\n')
+        }
       },
       postcss: {
         plugins: [
@@ -42,23 +45,23 @@ export default defineConfig({
           postcssPresetEnv({
             autoprefixer: {
               flexbox: false,
-              grid: true,
+              grid: true
             },
             stage: 3,
             features: {
-              'custom-properties': false,
-            },
-          }),
-        ],
-      },
+              'custom-properties': false
+            }
+          })
+        ]
+      }
     },
-    plugins: [commonjs(), yaml()],
+    plugins: [commonjs(), yaml(), sassGlobImports()],
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './'),
         '@': path.resolve(__dirname, './src'),
-        '#': path.resolve(__dirname, './src/types'),
-      },
-    },
-  },
+        '#': path.resolve(__dirname, './src/types')
+      }
+    }
+  }
 });
