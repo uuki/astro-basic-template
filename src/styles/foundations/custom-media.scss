@@ -1,15 +1,7 @@
-@custom-media --xs-only (width <= 640px);
-@custom-media --xs-above (width >= 640px);
-@custom-media --xs-below (width <= 640px);
-
-@custom-media --sm-only (640px < width <= 768px);
-@custom-media --sm-above (width >= 768px);
-@custom-media --sm-below (width <= 768px);
-
-@custom-media --md-only (768px < width <= 1024px);
-@custom-media --md-above (width >= 1024px);
-@custom-media --md-below (width <= 1024px);
-
-@custom-media --md-only (1024px < width <= 1366px);
-@custom-media --md-above (width >= 1366px);
-@custom-media --md-below (width <= 1366px);
+/**
+ * PostCSS Custom Media
+ * @see https://www.npmjs.com/package/postcss-custom-media
+ */
+@custom-media --mobile (width < 768px);
+@custom-media --desktop (768px <= width);
+@custom-media --desktop-large (1366px <= width);

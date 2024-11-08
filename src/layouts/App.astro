@@ -1,6 +1,7 @@
 ---
-import DocumentLayout, { Props as DocumentProps } from '../layouts/Document.astro';
+import DocumentLayout, { type Props as DocumentProps } from '../layouts/Document.astro';
 export interface Props extends DocumentProps {}
+export type { Meta } from '@/layouts/Document.astro';
 
 const props = Astro.props;
 ---
