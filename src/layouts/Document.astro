@@ -1,47 +1,39 @@
 ---
 import '@/styles/style.scss';
-import config from '@/data/meta.yml'
+import { type MetaProps, createMeta } from '@/utils/meta.ts';
+import configData from '@/data/config.yml'
+import metaData from '@/data/meta.yml'
 
-export interface Meta {
-  title: string
-  description: string
-  'og:title': string
-  'og:description': string
-  'og:image': string
-}
-
-export interface Props {
-  meta?: Partial<Meta>
+export interface Props extends MetaProps {
 }
 
 const props = Astro.props;
-
-const meta: Readonly<Meta> = {
-  ...config.meta,
-  ...props.meta,
-}
+const meta = createMeta(props.meta);
 
 const formats = {
-  title: [meta.title, config.siteName].filter(Boolean).join(' - ')
+  title: [meta.title, configData.siteName].filter(Boolean).join(' - '),
+  'og:title': [meta['og:title'], configData.siteName].filter(Boolean).join(' - ')
 }
 const origin = import.meta.env.PUBLIC_ORIGIN || Astro.url.origin
 const url = `${origin}${Astro.url.pathname}`
 ---
 
 <!DOCTYPE html>
-<html lang={config.lang}>
+<html lang={configData.lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{formats.title}</title>
-    <meta name="description" content={meta.description}>
+    <meta name="description" content={meta.description || metaData.description} />
+    <meta property="og:description" content={meta['og:description'] || metaData['og:description']} />
     <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={formats.title} />
+    <meta property="og:title" content={formats['og:title']} />
     {meta['og:image'] && (<meta property="og:image" content={origin + meta['og:image']} />)}
-    <meta property="og:description" content={meta.description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={url} />
     <script>
       import '@/js/app'
     </script>
