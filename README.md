@@ -10,13 +10,12 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 
 ## ✨ Features
 
-- Astro@4
+- Astro@5.6.1
 - CSS (Sass + PostCSS Plugins)
   - glob import
   - custom media
-  - autoprefixer
 - TypeScript
-- Svelte@4
+- Svelte@5
 - minimal setuped linters (eslint, stylelint)
 - pretteir
 - husky
@@ -47,7 +46,8 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 │   │   └── img
 │   ├── components # astro templates
 │   ├── data # static data for templates
-│   │   └── meta.yml # site config
+│   │   ├── config.yml # site config
+│   │   └── meta.yml
 │   ├── js
 │   │   └── app.ts
 │   ├── layouts
@@ -64,15 +64,10 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 │   │   │   ├── reset.scss
 │   │   │   └── variables
 │   │   └── style.scss
-│   └── types
-│       ├── astro.d.ts # custom type for astro components
-│       ├── declaration.d.ts
-│       └── env.d.ts
-├── tsconfig.json
-├── utils
-│   ├── README.md
-│   └── fetchImage # resolve path utility for framework other than astro
-│       ├── fetchLocalImages.ts
-│       └── index.ts
-└── yarn.lock
+│   ├── types
+│   │   ├── astro.d.ts # custom type for astro components
+│   │   └── declaration.d.ts
+│   └── utils
+│       └── meta.ts
+└── tsconfig.json
 ```
