@@ -1,8 +1,9 @@
 ---
-import '@/styles/style.scss';
 import { type MetaProps, createMeta } from '@/utils/meta.ts';
 import configData from '@/data/config.yml'
 import metaData from '@/data/meta.yml'
+
+import.meta.glob("@/styles/foundations/**/*.scss", { eager: true });
 
 export interface Props extends MetaProps {
 }

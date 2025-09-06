@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url';
 import { defineConfig } from 'astro/config';
 import yaml from '@rollup/plugin-yaml';
 import commonjs from '@rollup/plugin-commonjs';
-import sassGlobImports from 'vite-plugin-sass-glob-import';
 import svelte from '@astrojs/svelte';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -27,7 +26,7 @@ export default defineConfig({
         }
       }
     },
-    plugins: [sassGlobImports(), commonjs(), yaml()],
+    plugins: [commonjs(), yaml()],
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './'),
