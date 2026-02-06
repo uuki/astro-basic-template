@@ -13,7 +13,7 @@
 - Svelte型定義統合
 - パスマッピング: `@/*`, `#/*` (types)
 
-## コンポーネント
+## Component
 
 ### Svelte
 
@@ -22,14 +22,7 @@
 - Svelte 5.x対応
 - unplugin-icons による型安全なiconコンポーネント想定
 
-### plop
-
-- コンポーネント生成コマンド: `pnpm plop`
-- layouts, objects, ui の3種類のコンポーネントタイプ定義
-- Astroコンポーネント + モジュールSCSSのペア生成
-- PascalCase 自動変換
-
-## スタイリング
+## Styling
 
 ### Sass
 
@@ -45,7 +38,7 @@
 - グローバルデータファイル:
   - `src/styles/settings/_custom-media.scss`
 
-## コード品質
+## Linter
 
 ### ESLint
 
@@ -68,7 +61,7 @@
 - Astroプラグイン統合
 - lint-staged連携による自動フォーマット
 
-## テスト
+## Test
 
 ### Vitest
 
@@ -84,7 +77,14 @@
 - `pnpm test:coverage`: カバレッジ計測
 - `pnpm setup:tests`: Playwrightブラウザインストール
 
-## ブラウザ互換性
+## Tool
+
+### plop（scaffolding）
+
+- コンポーネント生成コマンド: `pnpm plop`
+- layouts, objects, ui の3種類のコンポーネントタイプ定義
+- Astroコンポーネント + モジュールSCSSのペア生成
+- PascalCase 自動変換
 
 ### browserslist
 
