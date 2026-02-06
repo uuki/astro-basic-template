@@ -6,17 +6,26 @@ function camelize (str) {
     .replace(/\s+/g, '');
 }
 
+function pascalize (str) {
+  return str
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
+      return word.toUpperCase();
+    })
+    .replace(/\s+/g, '');
+}
+
 export default function (
   /** @type {import('plop').NodePlopAPI} */
   plop
 ) {
   plop.setHelper('camelize', camelize);
+  plop.setHelper('pascalize', pascalize);
 
   /**
-   * example scaffolding structure
+   * scaffolding structure
    */
   plop.setGenerator('component', {
-    description: 'Create a new React component',
+    description: 'Create a new component',
     prompts: [
       {
         type: 'list',
@@ -27,18 +36,19 @@ export default function (
       {
         type: 'input',
         name: 'componentName',
-        message: 'Component name (PascalCase):'
+        message: 'Component name (Auto-converted to PascalCase):',
+        filter: pascalize
       }
     ],
     actions: [
       {
         type: 'add',
-        path: 'src/components/{{componentType}}/{{componentName}}/{{componentName}}.astro',
+        path: 'src/components/{{componentType}}/{{pascalize componentName}}/{{pascalize componentName}}.astro',
         templateFile: 'plop-templates/component.astro.hbs'
       },
       {
         type: 'add',
-        path: 'src/components/{{componentType}}/{{componentName}}/{{componentName}}.module.scss',
+        path: 'src/components/{{componentType}}/{{pascalize componentName}}/{{pascalize componentName}}.module.scss',
         templateFile: 'plop-templates/style.module.scss.hbs'
       }
     ]

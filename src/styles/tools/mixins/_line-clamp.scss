@@ -1,0 +1,9 @@
+@mixin line-clamp($line: 2) {
+  display: -webkit-box;
+  /*! autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  /*! autoprefixer: ignore next */
+  box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}

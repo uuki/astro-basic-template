@@ -9,8 +9,9 @@ module.exports = {
         'custom-properties': true
       }
     }),
+    // Files for preprocessor (not output as source after build)
     postcssGlobalData({
-      files: ['./src/styles/foundations/custom-media.scss']
+      files: ['./src/styles/settings/_custom-media.scss']
     })
   ]
 };

@@ -1,9 +1,13 @@
 ---
-import { type MetaProps, createMeta } from '@/utils/meta.ts';
+import { type MetaProps, createMeta } from '@/utils/meta';
 import configData from '@/data/config.yml'
 import metaData from '@/data/meta.yml'
 
-import.meta.glob("@/styles/foundations/**/*.scss", { eager: true });
+import.meta.glob("@/styles/settings/**/*.scss", { eager: true });
+import.meta.glob("@/styles/generic/**/*.scss", { eager: true });
+import.meta.glob("@/styles/base/**/*.scss", { eager: true });
+// as needed
+// import.meta.glob("@/styles/utilities/**/*.scss", { eager: true });
 
 export interface Props extends MetaProps {
 }

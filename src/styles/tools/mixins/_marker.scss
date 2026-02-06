@@ -1,0 +1,8 @@
+@mixin marker($size: 1em, $color: #fff59d, $y: bottom) {
+  background-image: linear-gradient(0deg, $color, $color);
+  background-repeat: no-repeat;
+  background-size: 100% $size;
+  background-position: left $y;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
