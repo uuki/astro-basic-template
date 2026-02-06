@@ -2,6 +2,16 @@
 
 ![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)
 
+ℹ️ **このブランチについて**
+
+Astroは、コンテンツ駆動型のWebフレームワークとして設計されており、CMSと接続する場合も、基本的にはJAMstackライクな利用が想定されています。  
+一方で、CMSへの組み込みを前提に、実行環境から切り離して利用する必要があるケースも依然として存在します。
+
+この前提で分業を行う場合、`chunk`の生成条件や`manifest`の取り扱いが課題となることがあります。  
+それでもなお、SFC（.astro）の設計思想や、CSS・JSのバンドルおよびアセット処理が、ほぼゼロコンフィグで成立する点は大きな利点です。
+
+本構成はAstroの標準的な利用想定からは一部外れていますが、一定のパフォーマンス等への影響を許容した上で、環境から切り離して扱いやすい構成を目的として採用しています。
+
 ## 概要
 
 本プロジェクトは、Webサイト開発向けのboilerplateです。
@@ -36,24 +46,26 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 
 ## 🧞 Commands
 
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `pnpm install`         | Installs dependencies                              |
-| `pnpm dev`             | Starts local dev server at `http://localhost:4321` |
-| `pnpm build`           | Build your production site to `./dist/`            |
-| `pnpm preview`         | Preview your build locally, before deploying       |
-| `pnpm clean`           | Remove dist directory                              |
-| `pnpm lint:es`         | Run ESLint                                         |
-| `pnpm lint:style`      | Run Stylelint                                      |
-| `pnpm test`            | Run tests in watch mode                            |
-| `pnpm test:ui`         | Run tests with UI                                  |
-| `pnpm test:run`        | Run tests once                                     |
-| `pnpm test:coverage`   | Run tests with coverage                            |
-| `pnpm setup:tests`     | Install Playwright browsers                        |
-| `pnpm setup:husky`     | Setup Husky hooks (optional)                       |
-| `pnpm plop`            | Generate component scaffolding                     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro preview` |
-| `pnpm astro --help`    | Get help using the Astro CLI                       |
+| Command                | Action                                                      |
+| :--------------------- | :---------------------------------------------------------- |
+| `pnpm install`         | Installs dependencies                                       |
+| `pnpm dev`             | Starts local dev server at `http://localhost:4321`          |
+| `pnpm build`           | Build production site, format HTML, and copy assets         |
+| `pnpm preview`         | Preview your build locally, before deploying                |
+| `pnpm clean`           | Remove dist directory                                       |
+| `pnpm lint:es`         | Run ESLint                                                  |
+| `pnpm lint:style`      | Run Stylelint                                               |
+| `pnpm test`            | Run tests in watch mode                                     |
+| `pnpm test:ui`         | Run tests with UI                                           |
+| `pnpm test:run`        | Run tests once                                              |
+| `pnpm test:coverage`   | Run tests with coverage                                     |
+| `pnpm setup:tests`     | Install Playwright browsers                                 |
+| `pnpm setup:husky`     | Setup Husky hooks (optional)                                |
+| `pnpm plop`            | Generate component scaffolding                              |
+| `pnpm format:html`     | Format HTML files in dist directory                         |
+| `pnpm copy:assets`     | Copy built assets to backend directory                      |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro preview`          |
+| `pnpm astro --help`    | Get help using the Astro CLI                                |
 
 ## 🚀 Project Structure
 
@@ -95,20 +107,21 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 │   │   ├── index.astro
 │   │   └── index.module.scss
 │   ├── styles               # グローバルスタイルのみ
-│   │   ├── foundations
-│   │   │   ├── base.scss
-│   │   │   ├── custom-media.scss
-│   │   │   ├── mixins
-│   │   │   ├── reset.scss
-│   │   │   └── variables
-│   │   ├── settings         # 環境別設定
-│   │   │   └── _custom-media.scss
-│   │   ├── tools            # functions / mixin and animations
+│   │   ├── 1_settings       # 環境別設定
+│   │   ├── 2_tools          # functions / mixin and animations
+│   │   │   ├── animations
 │   │   │   ├── functions
 │   │   │   └── mixins
-│   │   └── style.scss
+│   │   ├── 3_generic        # リセットCSS等
+│   │   ├── 4_base           # ベーススタイル
+│   │   ├── 5_layouts        # レイアウトパターン
+│   │   ├── 6_objects        # オブジェクトスタイル
+│   │   ├── 7_ui             # UIコンポーネントスタイル
+│   │   ├── 8_utilities      # ユーティリティクラス
+│   │   └── 9_pages          # ページ固有スタイル
 │   ├── types
 │   │   ├── astro.d.ts
+│   │   ├── data.d.ts        # YAMLファイル型定義
 │   │   └── declaration.d.ts
 │   └── utils
 │       └── meta.ts

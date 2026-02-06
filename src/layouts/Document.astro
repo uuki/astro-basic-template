@@ -3,11 +3,16 @@ import { type MetaProps, createMeta } from '@/utils/meta';
 import configData from '@/data/config.yml';
 import metaData from '@/data/meta.yml';
 
-import.meta.glob('@/styles/settings/**/*.scss', { eager: true });
-import.meta.glob('@/styles/generic/**/*.scss', { eager: true });
-import.meta.glob('@/styles/base/**/*.scss', { eager: true });
 // as needed
-// import.meta.glob("@/styles/utilities/**/*.scss", { eager: true });
+// import.meta.glob("@/styles/0_generated/icons.css", { eager: true });
+import.meta.glob('@/styles/1_settings/**/*.scss', { eager: true });
+import.meta.glob('@/styles/3_generic/**/*.scss', { eager: true });
+import.meta.glob('@/styles/4_base/**/*.scss', { eager: true });
+import.meta.glob('@/styles/5_layouts/**/*.scss', { eager: true });
+import.meta.glob('@/styles/6_objects/**/*.scss', { eager: true });
+import.meta.glob('@/styles/7_ui/**/*.scss', { eager: true });
+import.meta.glob('@/styles/8_utilities/**/*.scss', { eager: true });
+import.meta.glob('@/styles/9_pages/**/*.scss', { eager: true });
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface Props extends MetaProps {

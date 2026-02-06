@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npm run format:html && npm run copy:assets",
     "preview": "astro preview",
     "clean": "rimraf dist",
     "lint:es": "eslint --cache 'src/**/*.{astro,js,ts,json}'",
@@ -18,7 +18,9 @@
     "test:coverage": "vitest run --coverage",
     "setup:tests": "playwright install",
     "setup:husky": "husky install && sed -i.bak '/husky/d' .gitignore && rm -f .gitignore.bak",
-    "plop": "npx plop component"
+    "plop": "npx plop component",
+    "format:html": "prettier --write 'dist/**/*.html'",
+    "copy:assets": "cp -r dist/assets/path/to/system-assets/{css,js,img} backend/assets/path/to/system-assets/"
   },
   "dependencies": {
     "astro": "5.16.16",

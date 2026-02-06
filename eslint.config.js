@@ -4,6 +4,8 @@ import eslintPluginSvelte from 'eslint-plugin-svelte';
 import eslintPluginImport from 'eslint-plugin-import';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import globals from 'globals';
+import noAstroScript from './eslint-rules/no-astro-script.js';
+import noPartialHydration from './eslint-rules/no-partial-hydration.js';
 
 export default [
   // Global ignores
@@ -65,6 +67,23 @@ export default [
     files: ['**/*.astro'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'warn',
+    },
+  },
+  // Custom rules for CMS integration (exclude Document.astro)
+  {
+    files: ['**/*.astro'],
+    ignores: ['**/Document.astro'],
+    plugins: {
+      'custom-rules': {
+        rules: {
+          'no-astro-script': noAstroScript,
+          'no-partial-hydration': noPartialHydration,
+        },
+      },
+    },
+    rules: {
+      'custom-rules/no-astro-script': 'error',
+      'custom-rules/no-partial-hydration': 'error',
     },
   },
 

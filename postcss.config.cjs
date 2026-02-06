@@ -11,7 +11,7 @@ module.exports = {
     }),
     // Files for preprocessor (not output as source after build)
     postcssGlobalData({
-      files: ['./src/styles/settings/_custom-media.scss']
+      files: ['./src/styles/1_settings/_custom-media.scss']
     })
   ]
 };

@@ -1,0 +1,21 @@
+:root {
+  --leading-trim: calc((1em - 1lh) / 2);
+}
+
+@mixin leading-trim {
+  &::before,
+  &::after {
+    content: '';
+    display: block flow;
+    inline-size: 0;
+    block-size: 1px;
+  }
+
+  &::before {
+    margin-block-end: var(--leading-trim);
+  }
+
+  &::after {
+    margin-block-start: var(--leading-trim);
+  }
+}
