@@ -2,8 +2,16 @@
 
 module.exports = {
   extends: ['stylelint-config-html/astro', 'stylelint-config-html/svelte'],
-  plugins: ['stylelint-scss'],
+  plugins: ['stylelint-scss', 'stylelint-browser-compat'],
   rules: {
+    // Browser compatibility check - warn about non-Baseline Widely Available features
+    'plugin/browser-compat': [
+      true,
+      {
+        browserslist: 'baseline widely available',
+        severity: 'warning',
+      },
+    ],
     'scss/selector-no-union-class-name': true,
     'selector-pseudo-class-no-unknown': [
       true,
