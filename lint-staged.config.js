@@ -1,6 +1,10 @@
 module.exports = {
-  '*.{js,ts}': ['eslint', 'eslint --fix'],
-  '**/*.scss': () => ['stylelint', 'stylelint --fix'],
-  '*.{astro,js,ts,json}': ['prettier --write'],
-  '**/*.ts?(x)': () => 'npm run build-types',
+  // ESLint: Astro, JavaScript, TypeScript, JSON
+  '*.{astro,js,ts,json}': ['eslint --cache --fix'],
+
+  // Stylelint: SCSS
+  '*.scss': ['stylelint --fix'],
+
+  // Prettier: Format all supported files
+  '*.{astro,js,ts,json,scss,md,yml,yaml}': ['prettier --write'],
 };
