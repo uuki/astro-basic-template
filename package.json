@@ -12,7 +12,12 @@
     "clean": "rimraf dist",
     "lint:es": "eslint --cache 'src/**/*.{astro,js,ts,json}'",
     "lint:style": "stylelint 'src/**/*.scss'",
-    "prepare": "husky install",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "setup:tests": "playwright install",
+    "setup:husky": "husky install && sed -i.bak '/husky/d' .gitignore && rm -f .gitignore.bak",
     "plop": "npx plop component"
   },
   "dependencies": {
@@ -29,6 +34,9 @@
     "@types/node": "^22.13.14",
     "@typescript-eslint/eslint-plugin": "^8.41.0",
     "@typescript-eslint/parser": "^8.41.0",
+    "@vitest/browser": "^4.0.18",
+    "@vitest/browser-playwright": "^4.0.18",
+    "@vitest/ui": "^4.0.18",
     "cross-env": "^10.1.0",
     "eslint": "^9.34.0",
     "eslint-config-prettier": "^8.10.0",
@@ -50,7 +58,8 @@
     "stylelint-scss": "7.0.0",
     "typescript": "5.3.3",
     "typescript-eslint": "^8.54.0",
-    "unplugin-icons": "^0.20.1"
+    "unplugin-icons": "^0.20.1",
+    "vitest": "^4.0.0"
   },
   "peerDependencies": {
     "typescript": "5.3.3"
