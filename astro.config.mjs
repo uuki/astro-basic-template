@@ -22,7 +22,11 @@ export default defineConfig({
           api: 'modern-compiler',
           charset: false,
           // Global addition styles
-          additionalData: [`@use "sass:math";`].join('\n')
+          additionalData: [
+            // Add other imports as needed
+            '@use "@/styles/tools/functions/_rem.scss" as *;',
+            '@use "@/styles/tools/mixins/_line-clamp.scss" as *;'
+          ].join('\n')
         }
       }
     },

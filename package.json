@@ -1,6 +1,6 @@
 {
   "name": "astro-basic-template",
-  "version": "1.3.2",
+  "version": "1.11.0",
   "license": "MIT",
   "private": true,
   "author": "uuki <uuki.dev@gmail.com>",
@@ -12,11 +12,16 @@
     "clean": "rimraf dist",
     "lint:es": "eslint --cache 'src/**/*.{astro,js,ts,json}'",
     "lint:style": "stylelint 'src/**/*.scss'",
-    "prepare": "husky install",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "setup:tests": "playwright install",
+    "setup:husky": "husky install && sed -i.bak '/husky/d' .gitignore && rm -f .gitignore.bak",
     "plop": "npx plop component"
   },
   "dependencies": {
-    "astro": "5.6.1",
+    "astro": "5.16.16",
     "svelte": "^5.25.12"
   },
   "devDependencies": {
@@ -29,12 +34,17 @@
     "@types/node": "^22.13.14",
     "@typescript-eslint/eslint-plugin": "^8.41.0",
     "@typescript-eslint/parser": "^8.41.0",
+    "@vitest/browser": "^4.0.18",
+    "@vitest/browser-playwright": "^4.0.18",
+    "@vitest/ui": "^4.0.18",
+    "cross-env": "^10.1.0",
     "eslint": "^9.34.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-import-resolver-typescript": "^3.6.3",
-    "eslint-plugin-astro": "^0.31.4",
+    "eslint-plugin-astro": "^1.5.0",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-svelte": "^2.46.1",
+    "eslint-plugin-svelte": "^3.14.0",
+    "globals": "^17.3.0",
     "husky": "8.0.2",
     "lint-staged": "13.0.3",
     "postcss": "^8.5.3",
@@ -43,11 +53,14 @@
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.7.2",
     "sass": "^1.86.3",
-    "stylelint": "14.16.1",
+    "stylelint": "17.1.1",
+    "stylelint-browser-compat": "1.0.0-beta.180",
     "stylelint-config-html": "1.1.0",
-    "stylelint-scss": "4.4.0",
+    "stylelint-scss": "7.0.0",
     "typescript": "5.3.3",
-    "unplugin-icons": "^0.20.1"
+    "typescript-eslint": "^8.54.0",
+    "unplugin-icons": "^0.20.1",
+    "vitest": "^4.0.0"
   },
   "peerDependencies": {
     "typescript": "5.3.3"

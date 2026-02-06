@@ -1,0 +1,3 @@
+@function rem($size) {
+  @return calc($size / 10 * 1rem);
+}

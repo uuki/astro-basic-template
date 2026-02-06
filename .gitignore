@@ -1,3 +1,6 @@
+# Optional Environment
+.husky
+
 # Build output
 dist/
 .output/

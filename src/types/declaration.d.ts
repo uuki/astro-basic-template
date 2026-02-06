@@ -1,5 +1,5 @@
 declare module '*.yml' {
-  const value: any;
+  const value: Record<string, unknown>;
   export default value;
 }
 

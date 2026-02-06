@@ -1,0 +1,98 @@
+# --------------------
+# Priority
+# --------------------
+- name: "priority: critical"
+  color: "bf3b9c"
+  description: "優先度：全体をブロックする最優先課題"
+
+- name: "priority: high"
+  color: "bf3b9c"
+  description: "優先度：早期に対応すべき重要課題"
+
+- name: "priority: low"
+  color: "bf3b9c"
+  description: "優先度：急を要さない軽微な課題"
+
+# --------------------
+# Scope
+# --------------------
+- name: "scope: api"
+  color: "6073ea"
+  description: "スコープ：API エンドポイント・通信に関する変更"
+
+- name: "scope: domain"
+  color: "6073ea"
+  description: "スコープ：ドメイン・ビジネスロジックに関する変更"
+
+- name: "scope: environment"
+  color: "6073ea"
+  description: "スコープ：インフラ・環境構築に関する変更"
+
+- name: "scope: ui"
+  color: "6073ea"
+  description: "スコープ：UI・フロントエンドに関する変更"
+
+# --------------------
+# State
+# --------------------
+- name: "state: draft"
+  color: "d0fd2a"
+  description: "状態：下書き・未確定の段階"
+
+- name: "state: in-discussion"
+  color: "d0fd2a"
+  description: "状態：方針や仕様を議論中"
+
+- name: "state: in-progress"
+  color: "d0fd2a"
+  description: "状態：作業に着手済み"
+
+- name: "state: needs-review"
+  color: "d0fd2a"
+  description: "状態：レビュー待ち"
+
+- name: "state: pending"
+  color: "d0fd2a"
+  description: "状態：判断・対応の保留中"
+
+- name: "state: ready-to-implement"
+  color: "d0fd2a"
+  description: "状態：仕様確定済み・実装着手可能"
+
+# --------------------
+# Triage
+# --------------------
+- name: "triage: duplicate"
+  color: "cfd3d7"
+  description: "トリアージ：既存 Issue と重複"
+
+- name: "triage: invalid"
+  color: "cfd3d7"
+  description: "トリアージ：不正または再現不能な Issue"
+
+- name: "triage: out-of-scope"
+  color: "cfd3d7"
+  description: "トリアージ：プロジェクトの対象範囲外"
+
+- name: "triage: wontfix"
+  color: "cfd3d7"
+  description: "トリアージ：対応しない判断済み"
+
+# --------------------
+# Type
+# --------------------
+- name: "type: bug"
+  color: "4fddb3"
+  description: "種別：不具合の報告"
+
+- name: "type: enhancement"
+  color: "4fddb3"
+  description: "種別：既存機能の改善・拡張"
+
+- name: "type: proposal"
+  color: "4fddb3"
+  description: "種別：新機能や方針の提案"
+
+- name: "type: question"
+  color: "4fddb3"
+  description: "種別：仕様や実装に関する質問"
