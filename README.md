@@ -4,7 +4,9 @@
 
 ## 概要
 
-本プロジェクトは、Webサイト開発向けのboilerplateです。基本的なコンポーネント構成とスタイリング基盤を提供し、ソースコード解析、ブラウザ互換性チェック、コードフォーマッターをデファクトスタンダードの範疇を目安にセットアップしています。
+本プロジェクトは、Webサイト開発向けのboilerplateです。
+
+基本的なコンポーネント構成とスタイリング基盤を提供し、ソースコード解析、ブラウザ互換性チェック、コードフォーマッターを、デファクトスタンダードの範疇を目安にセットアップしています。
 
 Thanks to [withastro/astro](https://github.com/withastro/astro)
 
@@ -59,7 +61,8 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 .
 ├── README.md
 ├── docs
-│   └── FEATURES.md          # 機能詳細ドキュメント
+│   ├── FEATURES.md          # 機能詳細ドキュメント
+│   └── GUIDELINE.md          # ディレクトリ想定ドキュメント
 ├── astro.config.mjs
 ├── vitest.config.ts
 ├── eslint.config.js
