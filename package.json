@@ -16,7 +16,7 @@
     "plop": "npx plop component"
   },
   "dependencies": {
-    "astro": "5.6.1",
+    "astro": "5.16.16",
     "svelte": "^5.25.12"
   },
   "devDependencies": {
