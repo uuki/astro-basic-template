@@ -14,7 +14,7 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: ['function', 'if', 'for', 'each', 'include', 'mixin', 'import', 'custom-media'],
+        ignoreAtRules: ['function', 'if', 'for', 'each', 'include', 'mixin', 'return', 'use', 'forward', 'extend', 'at-root', 'warn', 'error', 'debug', 'content', 'import', 'custom-media'],
       },
     ],
   },

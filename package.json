@@ -43,9 +43,9 @@
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.7.2",
     "sass": "^1.86.3",
-    "stylelint": "14.16.1",
+    "stylelint": "17.1.1",
     "stylelint-config-html": "1.1.0",
-    "stylelint-scss": "4.4.0",
+    "stylelint-scss": "7.0.0",
     "typescript": "5.3.3",
     "unplugin-icons": "^0.20.1"
   },
