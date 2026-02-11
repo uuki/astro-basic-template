@@ -36,11 +36,12 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
   - browserslist: Baseline Widely Available
   - Git Hooks (Option): Husky + lint-staged
 
+---
+
 - 特徴の詳細は [docs/FEATURES.md](./docs/FEATURES.md) を参照
 - コンポーネント構造は [docs/GUIDELINE.md](./docs/GUIDELINE.md) を参照
-
-- For detailed features, see [docs/FEATURES.md](./docs/en/FEATURES.md)
-- For the component structure, see [docs/GUIDELINE.md](./docs/en/GUIDELINE.md)
+- For detailed features, see [docs/en/FEATURES.md](./docs/en/FEATURES.md)
+- For the component structure, see [docs/en/GUIDELINE.md](./docs/en/GUIDELINE.md)
 
 ## 🧞 Commands
 
@@ -70,7 +71,7 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 ├── README.md
 ├── docs
 │   ├── FEATURES.md          # Boilerplate Feature Documentation
-│   └── GUIDELINE.md          # How to Use This Boilerplate
+│   └── GUIDELINE.md         # How to Use This Boilerplate
 ├── astro.config.mjs
 ├── vitest.config.ts
 ├── eslint.config.js
