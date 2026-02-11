@@ -2,7 +2,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'astro/config';
 import yaml from '@rollup/plugin-yaml';
-import commonjs from '@rollup/plugin-commonjs';
 import svelte from '@astrojs/svelte';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -30,7 +29,7 @@ export default defineConfig({
         }
       }
     },
-    plugins: [commonjs(), yaml()],
+    plugins: [yaml()],
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './'),
