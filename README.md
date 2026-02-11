@@ -8,6 +8,10 @@
 
 基本的なコンポーネント構成とスタイリング基盤を提供し、ソースコード解析、ブラウザ互換性チェック、コードフォーマッターを、デファクトスタンダードの範疇を目安にセットアップしています。
 
+This project is a boilerplate for web site development.
+
+It provides a basic component structure and a styling foundation, and comes preconfigured with tools for source code analysis, browser compatibility checks, and code formatting, aligned with widely accepted de facto standards.
+
 Thanks to [withastro/astro](https://github.com/withastro/astro)
 
 ## ✨ Features
@@ -17,7 +21,7 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 - Sass + PostCSS
   - custom-media query
   - preset-env (stage 3)
-  - global function / mixin の自動インポート
+  - Global function and mixin auto-import
 - Linters
   - ESLint 9.x (flat config)
   - Stylelint 17.x (browser-compat)
@@ -25,14 +29,18 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 - Tests
   - Vitest 4.x (browser mode + Playwright)
 - Scaffolding Tool
-  - plop: コンポーネント生成
+  - Plop: Create Components and Styles
 - Utility
-  - unplugin-icons: 型安全なアイコン
+  - unplugin-icons: type-safe icons
 - Others
-  - browserslist: Baseline Widely Available基準
-  - Git Hooks (オプション): Husky + lint-staged
+  - browserslist: Baseline Widely Available
+  - Git Hooks (Option): Husky + lint-staged
 
-詳細は [docs/FEATURES.md](./docs/FEATURES.md) を参照
+- 特徴の詳細は [docs/FEATURES.md](./docs/FEATURES.md) を参照
+- コンポーネント構造は [docs/GUIDELINE.md](./docs/GUIDELINE.md) を参照
+
+- For detailed features, see [docs/FEATURES.md](./docs/en/FEATURES.md)
+- For the component structure, see [docs/GUIDELINE.md](./docs/en/GUIDELINE.md)
 
 ## 🧞 Commands
 
@@ -61,29 +69,29 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 .
 ├── README.md
 ├── docs
-│   ├── FEATURES.md          # 機能詳細ドキュメント
-│   └── GUIDELINE.md          # ディレクトリ想定ドキュメント
+│   ├── FEATURES.md          # Boilerplate Feature Documentation
+│   └── GUIDELINE.md          # How to Use This Boilerplate
 ├── astro.config.mjs
 ├── vitest.config.ts
 ├── eslint.config.js
 ├── .stylelintrc.cjs
-├── .browserslistrc          # Baseline Widely Available基準
+├── .browserslistrc          # Baseline: Widely Available
 ├── postcss.config.cjs
-├── plopfile.mjs             # コンポーネント生成設定
-├── plop-templates/          # コンポーネントテンプレート
-├── lint-staged.config.js    # for husky
+├── plopfile.mjs             # Component & style scaffolding with Plop
+├── plop-templates/
+├── lint-staged.config.js    # For husky
 ├── package.json
 ├── public
 │   └── favicon.svg
 ├── src
-│   ├── __tests__            # テストファイル
-│   ├── assets               # サイトアセット
+│   ├── __tests__
+│   ├── assets
 │   │   └── img
-│   ├── components           # Astroコンポーネント
+│   ├── components           # See ./docs/GUIDELINE.md for the design principles
 │   │   ├── layouts
 │   │   ├── objects
 │   │   └── ui
-│   ├── data                 # テンプレート用静的データ
+│   ├── data                 # Static Data for templates
 │   │   ├── config.yml
 │   │   └── meta.yml
 │   ├── js
@@ -91,22 +99,24 @@ Thanks to [withastro/astro](https://github.com/withastro/astro)
 │   ├── layouts
 │   │   ├── App.astro
 │   │   └── Document.astro
-│   ├── pages
-│   │   ├── index.astro
-│   │   └── index.module.scss
-│   ├── styles               # グローバルスタイルのみ
-│   │   ├── foundations
-│   │   │   ├── base.scss
-│   │   │   ├── custom-media.scss
-│   │   │   ├── mixins
-│   │   │   ├── reset.scss
-│   │   │   └── variables
-│   │   ├── settings         # 環境別設定
-│   │   │   └── _custom-media.scss
-│   │   ├── tools            # functions / mixin and animations
-│   │   │   ├── functions
-│   │   │   └── mixins
-│   │   └── style.scss
+│   ├── styles               # ITCSS-Based Global Styles Only
+│   │   ├── base
+│   │   │   └── _base.scss
+│   │   ├── generic
+│   │   │   └── _reset.scss
+│   │   ├── settings
+│   │   │   ├── _color.scss
+│   │   │   ├── _custom-media.scss
+│   │   │   ├── _easing.scss
+│   │   │   ├── _font-family.scss
+│   │   │   └── _zindex.scss
+│   │   ├── tools
+│   │   │   ├── animations
+│   │   │   ├── functions
+│   │   │   └── mixins
+│   │   └── utilities
+│   │       ├── _details-reset.scss
+│   │       └── _hidden.scss
 │   ├── types
 │   │   ├── astro.d.ts
 │   │   └── declaration.d.ts
